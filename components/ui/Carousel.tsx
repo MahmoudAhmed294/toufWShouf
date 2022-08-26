@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import Image from 'next/image';
 import Sliderbg1 from '@/assets/images/sliderbg1.jpg';
 import Sliderbg2 from '@/assets/images/sliderbg2.jpg';
 import Sliderbg3 from '@/assets/images/bgAuth.jpg';
+import Filters from '../Filters/';
 import { Box, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
@@ -19,7 +19,7 @@ export default function Carousel() {
     LazyLoadTypes: 'progressively',
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 3000,
     customPaging: function (i: any) {
       return <div className="dot"></div>;
@@ -28,7 +28,7 @@ export default function Carousel() {
   };
 
   const imagesStyle = {
-    height: '65vh',
+    height: '70vh',
     width: '100%',
     backgroundPosition: 'top',
     position: 'relative',
@@ -36,6 +36,8 @@ export default function Carousel() {
     backgroundSize: 'cover',
   };
   return (
+    <Box>
+      
     <Slider {...settings}>
       <Box
         sx={{
@@ -127,5 +129,7 @@ export default function Carousel() {
         </Stack>
       </Box>
     </Slider>
+    </Box>
+
   );
 }

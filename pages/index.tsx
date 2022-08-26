@@ -11,7 +11,8 @@ import { useAppDispatch } from '@/hooks/useStore';
 import {  toggleLanguage } from '@/store/languageSlice';
 import {ClientStorage} from '@/hooks/useLocalStroge';
 import Carousel from '@/components/ui/Carousel';
-import ContactDial from '@/components/ui/ContactDial';
+import ContactDial from '@/components/ui/ContactDail';
+import Filter from '@/components/Filters';
 
 const Home: NextPage = () => {
 
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
     <Box >
       <Carousel />
     </Box>
+    <Filter />
     </Box>
   );
 };

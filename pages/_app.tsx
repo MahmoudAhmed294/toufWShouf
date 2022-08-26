@@ -1,8 +1,26 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import ThemeProvider from '@/theme/theme';
+import { Provider } from 'react-redux';
+import { store } from '@/store/store';
+import NextNProgress from 'nextjs-progressbar';
+import '@/i18n/i18n';
+import Layout from '@/layout/Layout';
+import 'styles/globals.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  
+  return (
+    <Provider store={store}>
+      <ThemeProvider>
+        <Layout>
+        <NextNProgress color="#E07026" height={3} showOnShallow={true} />
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;

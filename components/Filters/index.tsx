@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container,  Grow } from '@mui/material';
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -73,13 +73,40 @@ const Index: FunctionComponent<Props> = () => {
     setFilterSelected(name);
   };
   return (
-    <Container maxWidth="lg" sx={{ position: 'relative', top: '-150px' }}>
-      <NavFilters action={filterSelected} changeFilter={changeFilter} />
-      < >
-      {FilterTypes.map(({ name, component }, _) => name === filterSelected && component
-      )}
-      </>
-    </Container>
+    <Box
+      sx={{
+        position: 'relative',
+        transform: 'translateY(-100%)',
+        zIndex: 100,
+        p: 3.4,
+      }}
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          backgroundColor: 'body.main',
+          opacity: 0.5,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          zIndex: -1,
+        }}
+      />
+      <Container maxWidth="lg">
+        <NavFilters action={filterSelected} changeFilter={changeFilter} />
+        <Box sx={{ zIndex: 100, position: 'relative' }}>
+          {FilterTypes.map(
+            ({ name, component }, _) =>
+              name === filterSelected && (
+                <Grow in={filterSelected === name}>
+                  <div>{component}</div>
+                </Grow>
+              )
+          )}
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

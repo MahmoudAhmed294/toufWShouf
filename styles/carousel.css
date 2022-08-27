@@ -3,10 +3,10 @@
   flex-direction: row;
   justify-content: center;
   position: absolute;
-  top: 0;
+  bottom: 22%;
   transform: rotate(90deg);
   width: auto;
-  left: -123px;
+  left: -172px;
   height: 100%;
 
 }

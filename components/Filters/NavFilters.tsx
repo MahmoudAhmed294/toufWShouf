@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import { Box, Stack, Typography, Container, Button } from '@mui/material';
+import { Box, Stack, Typography, Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { FilterTypes } from '.';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';

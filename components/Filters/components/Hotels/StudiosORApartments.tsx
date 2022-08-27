@@ -1,8 +1,8 @@
-import {Box , Typography} from "@mui/material"
+import {Typography ,Box} from "@mui/material"
 import React ,{FunctionComponent} from 'react'      
 import { useTranslation } from 'react-i18next';      
 interface Props {}
-const Tickets :FunctionComponent<Props> = () => {
+const StudiosORApartments :FunctionComponent<Props> = () => {
 
     const {t} = useTranslation()      
 
@@ -17,4 +17,4 @@ const Tickets :FunctionComponent<Props> = () => {
   )
 };
 
-export default Tickets
+export default StudiosORApartments

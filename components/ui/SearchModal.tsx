@@ -4,9 +4,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Slide from '@mui/material/Slide';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
-import Search from '@mui/icons-material/Search';
 import { IconButton, Stack, TextField } from '@mui/material';
 
 const style = {
@@ -40,7 +38,7 @@ export default function SearchModal() {
           timeout: 500,
         }}
       >
-          <Box sx={style}>
+          <Box sx={{...style , display: open ? 'block' : 'none' }} onClick={handleOpen}>
         <Slide direction="up" mountOnEnter unmountOnExit in={open}>
             <Stack direction="row">
               <TextField

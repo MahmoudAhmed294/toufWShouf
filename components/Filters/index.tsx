@@ -1,6 +1,7 @@
-import { Box, Container,  Grow } from '@mui/material';
+import { Box, Container, Grow, Tab } from '@mui/material';
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
+import Tabs, { tabsClasses } from '@mui/material/Tabs';
 
 import Outings from './components/Outings';
 import Hotels from './components/Hotels';
@@ -10,7 +11,6 @@ import Packages from './components/Packages';
 import Tickets from './components/Tickets';
 import RestaurantForm from './components/Restaurant';
 import TailoredServices from './components/TailoredServices';
-import NavFilters from './NavFilters';
 import {
   AirplaneTicket,
   BeachAccess,
@@ -69,13 +69,17 @@ const Index: FunctionComponent<Props> = () => {
   const { t } = useTranslation();
   const [filterSelected, setFilterSelected] = React.useState('Outings');
 
-  const changeFilter = (name: string) => {
-    setFilterSelected(name);
+  const changeFilter = (event: React.SyntheticEvent, newValue: string) => {
+    setFilterSelected(newValue);
+    
   };
+
   return (
     <Box
       sx={{
-        position: 'relative',
+        position: 'absolute',
+        left: 0,
+        right: 0,
         transform: 'translateY(-100%)',
         zIndex: 100,
         p: 3.4,
@@ -94,16 +98,47 @@ const Index: FunctionComponent<Props> = () => {
         }}
       />
       <Container maxWidth="lg">
-        <NavFilters action={filterSelected} changeFilter={changeFilter} />
+        {/* <NavFilters action={filterSelected} changeFilter={changeFilter} />
+         */}
+        <Container maxWidth="md">
+          <Tabs 
+            value={filterSelected}
+            onChange={changeFilter}
+            aria-label="basic tabs example"
+            variant="scrollable"
+            scrollButtons
+            allowScrollButtonsMobile
+            sx={{
+              [`& .${tabsClasses.scrollButtons}`]: {
+                '&.Mui-disabled': { opacity: 0.3 },
+              },
+              color: 'body.light',
+              mb:2
+            }}
+          >
+            {FilterTypes.map((value, index) => (
+              <Tab
+                icon={value.icon}
+                iconPosition="start"
+                value={value.name}
+                label={value.name}
+                key={index}
+                sx={{ color: 'body.light', mx: 2.1 }}
+              />
+            ))}
+          </Tabs>
+        </Container>
+
         <Box sx={{ zIndex: 100, position: 'relative' }}>
-          {FilterTypes.map(
-            ({ name, component }, _) =>
-              name === filterSelected && (
-                <Grow in={filterSelected === name}>
-                  <div>{component}</div>
-                </Grow>
-              )
-          )}
+          {FilterTypes.map(({ name, component }, index) => (
+            <Grow in={filterSelected === name} key={index}>
+              <div>
+                <TabPanel value={filterSelected} index={name}>
+                  {component}
+                </TabPanel>
+              </div>
+            </Grow>
+          ))}
         </Box>
       </Container>
     </Box>
@@ -111,3 +146,25 @@ const Index: FunctionComponent<Props> = () => {
 };
 
 export default Index;
+
+interface TabPanelProps {
+  children?: React.ReactElement;
+  index: string;
+  value: string;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <>{children}</>}
+    </div>
+  );
+}

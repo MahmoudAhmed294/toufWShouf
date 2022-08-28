@@ -1,9 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import Sliderbg1 from '@/assets/images/sliderbg1.jpg';
-import Sliderbg2 from '@/assets/images/sliderbg2.jpg';
-import Sliderbg3 from '@/assets/images/bgAuth.jpg';
+import Sliderbg1 from '@/assets/images/sliderbg1.webp';
+import Sliderbg2 from '@/assets/images/sliderbg2.webp';
+import Sliderbg3 from '@/assets/images/bgAuth.webp';
 import { Box, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
@@ -20,7 +20,7 @@ export default function Carousel() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    customPaging: function (i: any) {
+    customPaging: function () {
       return <div className="dot"></div>;
     },
     dotsClass: 'slick-dots slick-thumb',
@@ -40,9 +40,9 @@ export default function Carousel() {
     <Box>
       <Slider {...settings}>
         {
-          ImagesArr.map((image ,index) =>(
+          ImagesArr.map((image ) =>(
             <Box
-            key={index}
+            key={Math.random()}
             sx={{
               ...imagesStyle,
               backgroundImage: `url(${image.src})`,

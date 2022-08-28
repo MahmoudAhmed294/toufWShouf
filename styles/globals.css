@@ -39,7 +39,6 @@
   font-weight: 700;
   src: local(''), url('../assets/fonts/Cairo-Bold.woff') format('woff');
 }
-@import url('./carousel.css');
 
 html,
 body {

@@ -13,7 +13,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { ShoppingBag } from '@mui/icons-material';
-import Logo from '@/assets/images/logo_en.png';
+import Logo from '@/assets/images/logo_en.webp';
 import Link from 'next/link';
 import SearchModal from '@/components/ui/SearchModal';
 

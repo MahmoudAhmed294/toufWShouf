@@ -25,7 +25,7 @@ interface PropsComponent {
   children: React.ReactElement;
 }
 const Navbar: FunctionComponent<Props> = (props) => {
-  const {  window } = props;
+  const { window } = props;
 
   const { t } = useTranslation();
   const router = useRouter();
@@ -55,15 +55,27 @@ const Navbar: FunctionComponent<Props> = (props) => {
               sx={{ py: 1 }}
             >
               <Grid item xs={3}>
-                <Image src={Logo} alt="logo" priority layout="intrinsic" />
+                <Box  onClick={() => router.push('/')} sx={{cursor:"pointer"}} >
+                  <Image src={Logo} alt="logo" priority layout="intrinsic" />
+                </Box>
               </Grid>
               <Grid item xs={9}>
-                <Stack direction="row" alignItems="center" spacing={6} justifyContent="space-between">
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  spacing={6}
+                  justifyContent="space-between"
+                >
                   <Link href={''}>{t('Offers')}</Link>
                   <Link href={''}>{t('My Reservations')}</Link>
                   <Link href={''}>{t('Contact Us')}</Link>
                   <Link href={''}>{t('Complaint and Suggestion')}</Link>
-                  <Stack direction="row" alignItems="center" spacing={1.5} justifyContent="end" >
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    spacing={1.5}
+                    justifyContent="end"
+                  >
                     <IconButton
                       sx={{ color: 'body.main' }}
                       onClick={() => router.push('/cart')}

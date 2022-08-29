@@ -52,9 +52,9 @@ const Home: NextPage = () => {
         <Filter />
       </Box>
       <Container maxWidth="lg">
-        <BestProducts />
+        <BestProducts title="Best Selling"/>
         <BannerAds {...banner1Props}/>
-        <BestProducts offers={true} />
+        <BestProducts offers={true}  title="Best Offers"/>
         <BannerAds {...banner2Props} />
         <Partners />
       </Container>

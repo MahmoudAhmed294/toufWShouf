@@ -5,23 +5,19 @@ import { products } from '@/data/products';
 import Product from './Products';
 
 interface Props {
-  offers?:boolean
+  title: string;
+  offers?: boolean;
 }
 
 const BestProducts: FunctionComponent<Props> = (props) => {
-
-  const {offers} = props;
+  const { offers, title } = props;
 
   const { t } = useTranslation();
 
   return (
     <Box sx={{ mt: 11, mb: 3 }}>
       <Typography variant="h2" sx={{ textAlign: 'center', mb: 3 }}>
-
-        {
-          offers? t('Best Offers ') : t('Best Selling')
-        
-        }
+        {title}
       </Typography>
       <Stack
         direction="row"
@@ -29,8 +25,8 @@ const BestProducts: FunctionComponent<Props> = (props) => {
         alignItems="center"
         sx={{ mb: 2 }}
       >
-        {products.slice(0, 3).map((product ) => (
-            <Product {...product} key={product.id} offer={offers}  />
+        {products.slice(0, 3).map((product) => (
+          <Product {...product} key={product.id} offer={offers} />
         ))}
       </Stack>
       <Grid container item xs={12} justifyContent="center" sx={{ mt: 4 }}>

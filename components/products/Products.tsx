@@ -11,13 +11,15 @@ import {
   CardMedia,
   Checkbox,
   Grid,
-  Paper,
   Rating,
   Typography,
+  Link,
 } from '@mui/material';
 import { Stack } from '@mui/system';
+import { useRouter } from 'next/router';
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
+import ProductRating from '../ui/ProductRating';
 
 interface Props {
   id: number;
@@ -32,7 +34,7 @@ const Products: FunctionComponent<Props> = (props) => {
   const { id, title, rating, price, mainImage, offerPrice, offer } = props;
 
   const { t } = useTranslation();
-
+  const router = useRouter();
   return (
     <Grid item container xs={3}>
       <Card
@@ -56,6 +58,20 @@ const Products: FunctionComponent<Props> = (props) => {
             borderRadius: '0 0 5px 5px',
           }}
         >
+          <Link
+            onClick={() => router.push(`productDetails/${id}`)}
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: '2',
+              cursor: 'pointer',
+            }}
+          >
+            {' '}
+          </Link>
           <Stack
             direction="row"
             justifyContent="space-between"
@@ -111,77 +127,12 @@ const Products: FunctionComponent<Props> = (props) => {
           <Typography gutterBottom variant="subtitle1" component="div">
             {t(title)}
           </Typography>
-          <Rating
-            name="half-rating-read"
-            defaultValue={rating}
-            precision={0.5}
-            readOnly
-            sx={{
-              '& .MuiRating-iconFilled': {
-                color: 'primary.main',
-              },
-              '& .MuiRating-iconEmpty': {
-                color: 'primary.main',
-              },
-            }}
-            icon={<StarRounded fontSize="inherit" />}
-            emptyIcon={<StarOutlineRounded fontSize="inherit" />}
-          />
-          {/* <StyledRating
-  name="customized-color"
-  defaultValue={2}
-  getLabelText={(value: number) => `${value} Heart${value !== 1 ? 's' : ''}`}
-  precision={0.5}
-  icon={<StarOutlineRounded fontSize="inherit" />}
-  emptyIcon={<StarRounded fontSize="inherit" />}
-/> */}
+
+          <ProductRating rating={rating} readOnly />
         </CardContent>
       </Card>
     </Grid>
   );
-  //   return (
-  //     <Grid item container xs={3}>
-  //       <Paper
-  //         elevation={0}
-  //         variant="outlined"
-  //         sx={{
-  //           backgroundImage: `url(${mainImage})`,
-  //           backgroundPosition: 'top',
-  //           backgroundSize: 'cover',
-  //           backgroundRepeat: 'no-repeat',
-  //           height: '100%',
-  //           width: '100%',
-  //           borderTop: 0,
-  //         }}
-  //       >
-  //         <Stack direction="column">
-  //           <Stack direction="row">
-  //             <Box
-  //               sx={{
-  //                 backgroundColor: 'body.light',
-  //                 borderRadius: '0 0 10px 0',
-  //                 p: 1,
-  //                 ml: '-1px',
-  //               }}
-  //             >
-  //               <Typography variant="caption" sx={{ color: 'main.lightGray' }}>
-  //                 {t('Start from')}
-  //               </Typography>
-  //               <Typography variant="subtitle1" sx={{ color: 'primary.main' }}>
-  //                 {price} EGP
-  //               </Typography>
-  //             </Box>
-  //             <Box>
-
-  //             <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
-
-  //             </Box>
-  //           </Stack>
-  //           <Stack direction="column"></Stack>
-  //         </Stack>
-  //       </Paper>
-  //     </Grid>
-  //   );
 };
 
 export default Products;

@@ -23,11 +23,14 @@ import G4 from '@/assets/images/products/G4.jpg';
 import G5 from '@/assets/images/products/G5.jpg';
 import G6 from '@/assets/images/products/G6.jpg';
 import ProductRating from '../ui/ProductRating';
+import BookButton from './BookButton';
 
 const itemData = [G1, G2, G3, G4, G5, G6];
 
-interface Props {}
-const DetailsTabs: FunctionComponent<Props> = () => {
+interface Props {
+  id: string | number | undefined;
+}
+const DetailsTabs: FunctionComponent<Props> = ({ id }) => {
   const { t } = useTranslation();
   const [value, setValue] = React.useState(0);
 
@@ -69,27 +72,7 @@ const DetailsTabs: FunctionComponent<Props> = () => {
             'Return Details Returns to original departure point Departure Point 77 Salah Salem, Al Omraneyah Ash Sharqeyah, Giza District, Giza Governorate, Egypt As per requested time our tour guide will be waiting in the lobby of your hotel and he will be holding a sign showing your name on it'
           )}
         </Typography>
-        <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            sx={{ mt: 2, color: 'body.main' }}
-          >
-            <Button variant="contained" size="large">
-              Book Now
-            </Button>
-
-            <Stack direction="row" alignItems="center" spacing={2}>
-              <Typography variant="body1">Share via</Typography>
-              <IconButton>
-                <FacebookOutlined sx={{ color: 'body.main' }} />
-              </IconButton>
-              <IconButton>
-                <Twitter sx={{ color: 'body.main' }} />
-              </IconButton>
-            </Stack>
-          </Stack>
-
+        <BookButton id={id} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Typography variant="subtitle2" sx={{ my: 2 }}>
@@ -128,27 +111,7 @@ const DetailsTabs: FunctionComponent<Props> = () => {
             {t("All prices don't include VAT")}
           </Typography>
         </Stack>
-        <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            sx={{ mt: 2, color: 'body.main' }}
-          >
-            <Button variant="contained" size="large">
-              Book Now
-            </Button>
-
-            <Stack direction="row" alignItems="center" spacing={2}>
-              <Typography variant="body1">Share via</Typography>
-              <IconButton>
-                <FacebookOutlined sx={{ color: 'body.main' }} />
-              </IconButton>
-              <IconButton>
-                <Twitter sx={{ color: 'body.main' }} />
-              </IconButton>
-            </Stack>
-          </Stack>
-
+        <BookButton id={id} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ImageList sx={{ width: '100%', height: 450 }} cols={3} rowHeight={164}>
@@ -158,27 +121,7 @@ const DetailsTabs: FunctionComponent<Props> = () => {
             </ImageListItem>
           ))}
         </ImageList>
-        <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            sx={{ mt: 2, color: 'body.main' }}
-          >
-            <Button variant="contained" size="large">
-              Book Now
-            </Button>
-
-            <Stack direction="row" alignItems="center" spacing={2}>
-              <Typography variant="body1">Share via</Typography>
-              <IconButton>
-                <FacebookOutlined sx={{ color: 'body.main' }} />
-              </IconButton>
-              <IconButton>
-                <Twitter sx={{ color: 'body.main' }} />
-              </IconButton>
-            </Stack>
-          </Stack>
-
+        <BookButton id={id} />
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Stack direction="row" alignItems="top" spacing={2}>

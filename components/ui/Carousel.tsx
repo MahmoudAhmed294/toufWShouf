@@ -6,6 +6,7 @@ import Sliderbg2 from '@/assets/images/sliderbg2.webp';
 import Sliderbg3 from '@/assets/images/bgAuth.webp';
 import { Box, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import BackgroundImage from './BackgroundImage';
 
 export default function Carousel() {
   const { t } = useTranslation();
@@ -35,49 +36,34 @@ export default function Carousel() {
     backgroundSize: 'cover',
   };
 
-  const ImagesArr=[Sliderbg1, Sliderbg2 , Sliderbg3]
+  const ImagesArr = [Sliderbg1, Sliderbg2, Sliderbg3];
   return (
     <Box>
       <Slider {...settings}>
-        {
-          ImagesArr.map((image ) =>(
-            <Box
-            key={Math.random()}
-            sx={{
-              ...imagesStyle,
-              backgroundImage: `url(${image.src})`,
-              color: 'body.light',
-            }}
-          >
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                backgroundColor: 'body.main',
-                opacity: 0.3,
-                left: 0,
-                bottom: 0,
-                right: 0,
-                zIndex: 2,
-              }}
-            />
+        {ImagesArr.map((image) => (
+          <BackgroundImage key={Math.random()} imageSrc={image} height={"79vh"}>
             <Stack
               direction="column"
               alignItems="center"
               justifyContent="start"
-              sx={{ height: '100%', position: 'relative', zIndex: 5, mt:"100px" }}
+              sx={{
+                height: '100%',
+                position: 'relative',
+                zIndex: 5,
+                pt: '100px',
+                color: 'body.light',
+              }}
             >
-              <Typography variant="h1">{t('We are ready to travel')}</Typography>
+              <Typography variant="h1">
+                {t('We are ready to travel')}
+              </Typography>
               <Typography variant="h3">
                 {t('We are ready to serve you')}
               </Typography>
             </Stack>
-          </Box>
-  
-          ))
-            }
+          </BackgroundImage>
+        ))}
       </Slider>
-
     </Box>
   );
 }

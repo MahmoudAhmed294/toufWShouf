@@ -4,6 +4,7 @@
     lightGray: "#B7B7B7",
     darkGray: "#989898",
     lightBlack: "#333333",
+    counter:"#F3F3F3",
     bg: "#fff",
   };
   

@@ -3,14 +3,14 @@ import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 
-import Outings from './components/Outings';
-import Hotels from './components/Hotels';
-import Transportation from './components/Transportation';
-import Flights from './components/Flights';
-import Packages from './components/Packages';
-import Tickets from './components/Tickets';
-import RestaurantForm from './components/Restaurant';
-import TailoredServices from './components/TailoredServices';
+import Outings from './Outings';
+import Hotels from './Hotels';
+import Transportation from './Transportation';
+import Flights from './Flights';
+import Packages from './Packages';
+import Tickets from './Tickets';
+import RestaurantForm from './Restaurant';
+import TailoredServices from './TailoredServices';
 import {
   AirplaneTicket,
   BeachAccess,

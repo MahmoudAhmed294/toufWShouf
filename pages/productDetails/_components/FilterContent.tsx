@@ -1,7 +1,6 @@
 import { Box, Container, Grid, Stack } from '@mui/material';
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
-import Image from 'next/image';
 import productDetailsImg from '@/assets/images/products/productDetails.jpg';
 import Filter from './Filter';
 import BackgroundImage from '../ui/BackgroundImage';

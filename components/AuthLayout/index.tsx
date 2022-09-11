@@ -11,7 +11,7 @@ const bgStyle = {
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
-  py: 6.9,
+  py: 5.4,
 };
 
 interface Props {
@@ -27,7 +27,8 @@ const Index: NextPage<Props> = ({ children }) => {
         <Grid
           container
           justifyContent={'space-between'}
-          sx={{ eight: '100%' }}
+          sx={{ height: '100%' , mt:"unset" }}
+          alignItems={'center'}
           spacing={6}
         >
           <Grid
@@ -36,8 +37,6 @@ const Index: NextPage<Props> = ({ children }) => {
             sx={{
               color: 'body.light',
               textAlign: 'center',
-              mt: '23%',
-              transform: 'translateY(-17%)',
             }}
           >
             <Typography variant="h2">

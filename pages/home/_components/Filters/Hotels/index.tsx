@@ -41,23 +41,23 @@ const Index: FunctionComponent<Props> = () => {
         row
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
-        sx={{ color: 'body.light', justifyContent: 'center' }}
+        sx={{ color: 'body.main', justifyContent: 'center' }}
         value={radioValue}
         onChange={handleChangeRadio}
       >
         <FormControlLabel
           value="Hotels"
-          control={<Radio sx={{ color: 'body.light' }} />}
+          control={<Radio sx={{ color: 'body.main' }} />}
           label="Hotels"
         />
         <FormControlLabel
           value="NileCruise"
-          control={<Radio sx={{ color: 'body.light' }} />}
+          control={<Radio sx={{ color: 'body.main' }} />}
           label="Nile cruise"
         />
         <FormControlLabel
           value="Studios/Apartments"
-          control={<Radio sx={{ color: 'body.light' }} />}
+          control={<Radio sx={{ color: 'body.main' }} />}
           label="Studios / Apartments"
         />
       </RadioGroup>

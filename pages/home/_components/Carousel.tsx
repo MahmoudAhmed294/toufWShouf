@@ -6,7 +6,7 @@ import Sliderbg2 from '@/assets/images/sliderbg2.webp';
 import Sliderbg3 from '@/assets/images/bgAuth.webp';
 import { Box, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import BackgroundImage from './BackgroundImage';
+import BackgroundImage from '../../../components/ui/BackgroundImage';
 
 export default function Carousel() {
   const { t } = useTranslation();

@@ -11,3 +11,14 @@ export const container={
         }
 }
 }
+
+export const button = {
+  MuiButton: {
+    styleOverrides: {
+      root: {
+        boxShadow: "none !important",
+      },
+    },
+  },
+};
+

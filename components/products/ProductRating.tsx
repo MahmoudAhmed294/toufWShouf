@@ -1,6 +1,6 @@
-import { StarOutlineRounded, StarRounded } from '@mui/icons-material';
-import { Rating } from '@mui/material';
-import React, { FunctionComponent } from 'react';
+import { StarOutlineRounded, StarRounded } from "@mui/icons-material";
+import { Rating } from "@mui/material";
+import React, { FunctionComponent } from "react";
 interface Props {
   rating: number;
   readOnly?: boolean;
@@ -21,13 +21,13 @@ const ProductRating: FunctionComponent<Props> = (props) => {
       }}
       readOnly={readOnly ? true : false}
       sx={{
-        '& .MuiRating-iconFilled': {
-          color: 'primary.main',
+        "& .MuiRating-iconFilled": {
+          color: "primary.main",
         },
-        '& .MuiRating-iconEmpty': {
-          color: 'primary.main',
+        "& .MuiRating-iconEmpty": {
+          color: "primary.main",
         },
-        zIndex: '12',
+        zIndex: "12",
       }}
       icon={<StarRounded fontSize="inherit" />}
       emptyIcon={<StarOutlineRounded fontSize="inherit" />}

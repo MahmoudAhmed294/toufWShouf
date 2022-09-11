@@ -11,7 +11,7 @@ function pxToRem(value:number) {
     fontWeightRegular: 400,
     fontWeightMedium: 600,
     fontWeightBold: 700,
-    
+    // fontSize: 18,
     h1: {
       fontWeight: 700,
       lineHeight: 80 / 64,

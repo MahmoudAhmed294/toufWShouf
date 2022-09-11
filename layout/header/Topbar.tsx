@@ -5,18 +5,18 @@ import {
   Grid,
   Stack,
   Typography,
-  Zoom  ,
+  Zoom,
   useScrollTrigger,
-} from '@mui/material';
-import React, { FunctionComponent } from 'react';
-import { Call } from '@mui/icons-material';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
-import MenuCoin from '@/components/ui/MenuCoin';
-import { useAppSelector, useAppDispatch } from '@/hooks/useStore';
-import { getLanguage, toggleLanguage } from '@/store/languageSlice';
-import { ClientStorage } from '@/hooks/useLocalStroge';
-import IsAuthPages from '@/hooks/auth/useIsAuthPages';
+} from "@mui/material";
+import React, { FunctionComponent } from "react";
+import { Call } from "@mui/icons-material";
+import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
+import MenuCoin from "@/components/ui/MenuCoin";
+import { useAppSelector, useAppDispatch } from "@/hooks/useStore";
+import { getLanguage, toggleLanguage } from "@/store/languageSlice";
+import { ClientStorage } from "@/hooks/useLocalStroge";
+import IsAuthPages from "@/hooks/auth/useIsAuthPages";
 
 interface PropsComponent {}
 const Topbar: FunctionComponent<PropsComponent> = (props) => {
@@ -28,13 +28,13 @@ const Topbar: FunctionComponent<PropsComponent> = (props) => {
 
   const changeLanguage = () => {
     switch (language) {
-      case 'en':
-        dispatch(toggleLanguage('ar'));
-        ClientStorage.set('language', 'ar');
+      case "en":
+        dispatch(toggleLanguage("ar"));
+        ClientStorage.set("language", "ar");
         break;
-      case 'ar':
-        dispatch(toggleLanguage('en'));
-        ClientStorage.set('language', 'en');
+      case "ar":
+        dispatch(toggleLanguage("en"));
+        ClientStorage.set("language", "en");
 
         break;
     }
@@ -43,7 +43,12 @@ const Topbar: FunctionComponent<PropsComponent> = (props) => {
   return (
     <HideOnScroll>
       <AppBar
-        sx={{ flexGrow: 1, backgroundColor: 'body.main', color: 'body.light' , boxShadow:"unset !important" }}
+        sx={{
+          flexGrow: 1,
+          backgroundColor: "body.main",
+          color: "body.light",
+          boxShadow: "unset !important",
+        }}
       >
         <Container maxWidth="lg">
           <Grid
@@ -53,7 +58,7 @@ const Topbar: FunctionComponent<PropsComponent> = (props) => {
             alignItems="center"
             sx={{ py: 0.5 }}
           >
-            <Grid item xs={6} sx={{ pl: 'unset !important' }}>
+            <Grid item xs={6} sx={{ pl: "unset !important" }}>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <Call />
                 <Typography variant="h3">19341</Typography>
@@ -67,23 +72,22 @@ const Topbar: FunctionComponent<PropsComponent> = (props) => {
                 justifyContent="end"
               >
                 <MenuCoin />
-                <Button variant="text" onClick={changeLanguage}>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontFamily: 'Cairo , sans-serif',
-                      color: 'body.light',
-                      fontWeight: 500,
-                    }}
-                  >
-                    {t('العربيه')}
-                  </Typography>
+                <Button
+                  variant="text"
+                  onClick={changeLanguage}
+                  sx={{
+                    fontFamily: "Cairo , sans-serif",
+                    color: "body.light",
+                    fontWeight: 500,
+                  }}
+                >
+                  {t("العربيه")}
                 </Button>
                 <Button
                   variant="contained"
-                  onClick={() => router.push('/login')}
+                  onClick={() => router.push("/login")}
                 >
-                  <Typography variant="button">{t('Sign in')}</Typography>
+                  {t("Sign in")}
                 </Button>
               </Stack>
             </Grid>
@@ -96,8 +100,6 @@ const Topbar: FunctionComponent<PropsComponent> = (props) => {
 
 export default Topbar;
 
-
-
 interface Props {
   window?: () => Window;
   children: React.ReactElement;
@@ -106,12 +108,12 @@ interface Props {
 function HideOnScroll(props: Props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
-    threshold:0,
+    threshold: 0,
     target: window ? window() : undefined,
   });
 
   return (
-    <Zoom   appear={false}  in={IsAuthPages() ? true  : !trigger}>
+    <Zoom appear={false} in={IsAuthPages() ? true : !trigger}>
       {children}
     </Zoom>
   );

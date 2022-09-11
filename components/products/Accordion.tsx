@@ -26,7 +26,7 @@ const AccordionData: FunctionComponent<Props> = ({ data }) => {
         <Accordion
           TransitionProps={{ unmountOnExit: true }}
           sx={{
-            boxShadow: 2,
+            boxShadow: 1,
             mt: 2,
             borderRadius: 2,
             '&:before': {

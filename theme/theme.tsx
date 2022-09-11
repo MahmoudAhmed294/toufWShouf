@@ -14,7 +14,8 @@ import palette from './palette';
 import typography from './typography';
 import { useAppSelector } from 'hooks/useStore';
 import { getDir } from '@/store/languageSlice';
-import { container } from './components/container';
+import { container ,button } from './components';
+import { shadows } from './shadows';
 
 
 type Props = {
@@ -34,11 +35,12 @@ export default function ThemeProvider({ children }: Props) {
         ...typography,
       },
       palette,
+      // shadows:shadows,
       components: {
         ...container,
+        ...button
       },
       shape: { borderRadius: 4 },
-      // components: { ...button },
     });
   }, [dir]);
 

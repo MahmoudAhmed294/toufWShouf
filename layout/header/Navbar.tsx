@@ -54,12 +54,12 @@ const Navbar: FunctionComponent<Props> = (props) => {
               alignItems="center"
               sx={{ py: 1 }}
             >
-              <Grid item xs={3}>
+              <Grid item xs={3} sx={{pl:'0px !important'}}>
                 <Box  onClick={() => router.push('/')} sx={{cursor:"pointer"}} >
                   <Image src={Logo} alt="logo" priority layout="intrinsic" />
                 </Box>
               </Grid>
-              <Grid item xs={9}>
+              <Grid item xs={9} sx={{pl:'0px !important'}}>
                 <Stack
                   direction="row"
                   alignItems="center"

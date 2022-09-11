@@ -5,14 +5,14 @@ import { useTranslation } from 'react-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Partners from '@/components/ui/Partners';
-import BestProducts from '@/components/products/BestProducts';
+import BestProducts from '@/components/ui/BestProducts';
 import DetailsTabs from '@/components/ProductDetails/DetailsTabs';
 import FilterContent from '@/components/ProductDetails/FilterContent';
 import TitleAndRating from '@/components/ProductDetails/TitleAndRating';
-import WatchVideoAndMap from '@/components/ProductDetails/WatchVideoAndMap';
+import WatchVideoAndMap from '@/pages/productDetails/_components/WatchVideoAndMap';
 import Tags from '@/components/ProductDetails/Tags';
 import LocationAndPriceAndTime from '@/components/ProductDetails/LocationAndPriceAndTime';
-import Accordion from '@/components/ProductDetails/Accordion';
+import Accordion from '@/components/products/Accordion';
 
 interface Props {}
 const Index: NextPage<Props> = () => {

@@ -1,15 +1,10 @@
 import * as React from 'react';
-import {
-  Box,
-  Typography,
-  Stepper,
-  Step,
-  StepLabel,
-  Button,
-} from '@mui/material';
+import { Box, Typography, Stepper, Step, StepLabel } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+
 import PassengerData from './PassengerData';
 import Payment from './Payment';
+import Success from './Success';
 
 const stepsComponent = ['Passenger data', 'Payment and confirm', 'Success'];
 export default function BookingStepper() {
@@ -45,9 +40,9 @@ export default function BookingStepper() {
         {activeStep === 0 ? (
           <PassengerData handleNext={handleNext} />
         ) : activeStep === 1 ? (
-          <Payment  handleNext={handleNext} handleBack={handleBack}/>
+          <Payment handleNext={handleNext} handleBack={handleBack} />
         ) : (
-          activeStep === 2 && <></>
+          activeStep === 2 && <Success />
         )}
       </>
     </Box>

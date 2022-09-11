@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import productDetailsImg from '@/assets/images/products/productDetails.jpg';
 import Filter from './Filter';
-import BackgroundImage from '../ui/BackgroundImage';
+import BackgroundImage from '@/components/ui/BackgroundImage';
 
 interface Props {}
 const FilterContent: FunctionComponent<Props> = () => {

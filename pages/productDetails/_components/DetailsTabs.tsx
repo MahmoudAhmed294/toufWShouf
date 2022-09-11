@@ -22,7 +22,7 @@ import G3 from '@/assets/images/products/G3.jpg';
 import G4 from '@/assets/images/products/G4.jpg';
 import G5 from '@/assets/images/products/G5.jpg';
 import G6 from '@/assets/images/products/G6.jpg';
-import ProductRating from '../ui/ProductRating';
+import ProductRating from '@/components/products/ProductRating';
 import BookButton from './BookButton';
 
 const itemData = [G1, G2, G3, G4, G5, G6];

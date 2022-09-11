@@ -22,8 +22,9 @@ const AccordionData: FunctionComponent<Props> = ({ data }) => {
 
   return (
     <Box>
-      {data.slice(0, 3).map(({ title, des }) => (
+      {data.slice(0, 3).map(({ title, des },index) => (
         <Accordion
+        key={index}
           TransitionProps={{ unmountOnExit: true }}
           sx={{
             boxShadow: 1,

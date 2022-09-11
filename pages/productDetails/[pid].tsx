@@ -1,18 +1,18 @@
-import React from 'react';
-import { Box, Grid, Container, Divider } from '@mui/material';
-import { NextPage } from 'next';
-import { useTranslation } from 'react-i18next';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Partners from '@/components/ui/Partners';
-import BestProducts from '@/components/ui/BestProducts';
-import DetailsTabs from '@/components/ProductDetails/DetailsTabs';
-import FilterContent from '@/components/ProductDetails/FilterContent';
-import TitleAndRating from '@/components/ProductDetails/TitleAndRating';
-import WatchVideoAndMap from '@/pages/productDetails/_components/WatchVideoAndMap';
-import Tags from '@/components/ProductDetails/Tags';
-import LocationAndPriceAndTime from '@/components/ProductDetails/LocationAndPriceAndTime';
-import Accordion from '@/components/products/Accordion';
+import React from "react";
+import { Box, Grid, Container, Divider } from "@mui/material";
+import { NextPage } from "next";
+import { useTranslation } from "react-i18next";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import Partners from "@/components/ui/Partners";
+import BestProducts from "@/components/products/BestProducts";
+import DetailsTabs from "./_components/DetailsTabs";
+import FilterContent from "./_components/FilterContent";
+import TitleAndRating from "./_components/TitleAndRating";
+import WatchVideoAndMap from "@/pages/productDetails/_components/WatchVideoAndMap";
+import Tags from "@/components/products/Tags";
+import LocationAndPriceAndTime from "./_components/LocationAndPriceAndTime";
+import Accordion from "@/components/products/Accordion";
 
 interface Props {}
 const Index: NextPage<Props> = () => {
@@ -31,13 +31,13 @@ const Index: NextPage<Props> = () => {
         <Container maxWidth="lg" sx={{ mt: 3 }}>
           <TitleAndRating
             rating={3.5}
-            title={'The Egyptian Gulf (Hospice of  the Sultan)'}
+            title={"The Egyptian Gulf (Hospice of  the Sultan)"}
           />
           <WatchVideoAndMap />
           <Divider sx={{ my: 0.5 }} />
-          <Tags tags={'Entertainment Trip, Historic Trip, Youth Journey'} />
+          <Tags tags={"Entertainment Trip, Historic Trip, Youth Journey"} />
           <LocationAndPriceAndTime
-            time={' 3 Hour/s'}
+            time={" 3 Hour/s"}
             location="' Egypt, Cairo'"
             price={850}
           />
@@ -46,11 +46,11 @@ const Index: NextPage<Props> = () => {
               <Accordion
                 data={[
                   {
-                    title: 'Tour Including',
-                    des: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+                    title: "Tour Including",
+                    des: " Lorem ipsum dolor sit amet, consectetur adipiscing elit.Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
                   },
                   {
-                    title: 'Cancellation policy',
+                    title: "Cancellation policy",
                     des: `
                   You can cancel up to 24 hours in advance of the experience
                   for a full refund. For a full refund, you must cancel at

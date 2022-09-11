@@ -32,14 +32,15 @@ const SearchItem: FunctionComponent<Props> = ({
       }}
     >
       <Grid container spacing={2}>
-        <Grid item xs={3.5} sx={{ pt: "0 !important" }}>
+        <Grid item xs={3.5} sx={{ pt: "0 !important", position:"relative" , borderRadius: "8px  0 0 8px !important" }}>
           <Image
             src={Img}
             alt="product"
             style={{ zIndex: 0, borderRadius: "8px  0 0 8px !important" }}
-            layout="responsive"
-            quality={80}
+            layout="fill"
+            quality={100}
             placeholder="blur"
+            
           />
           <Box
             sx={{

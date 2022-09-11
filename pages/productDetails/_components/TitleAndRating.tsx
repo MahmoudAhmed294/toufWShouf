@@ -1,7 +1,7 @@
 import { Typography, Stack } from '@mui/material';
 import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
-import ProductRating from '@/components/ui/ProductRating';
+import ProductRating from '@/components/products/ProductRating';
 
 interface Props {
   title: string;
